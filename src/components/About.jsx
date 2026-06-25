@@ -1,4 +1,5 @@
 import { ShieldCheck, Stethoscope, Heart, Microscope, Siren, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
@@ -55,10 +56,10 @@ export default function About() {
             ))}
           </div>
 
-          <a href="#services"
+          <Link to="/services"
             className="btn-shimmer inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-semibold px-7 py-3.5 rounded-2xl mt-8 transition-colors">
             Our Services <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,26 +1,28 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { MessageCircle, ChevronUp } from 'lucide-react'
 
 import TopBar from './components/TopBar'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Stats from './components/Stats'
-import About from './components/About'
-import Services from './components/Services'
-import Emergency from './components/Emergency'
-import WhyChooseUs from './components/WhyChooseUs'
-import Facilities from './components/Facilities'
-import Gallery from './components/Gallery'
-import Testimonials from './components/Testimonials'
-import CTABanner from './components/CTABanner'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+
+// Pages
+import Home from './pages/Home'
+import AboutPage from './pages/AboutPage'
+import ServicesPage from './pages/ServicesPage'
+import EmergencyPage from './pages/EmergencyPage'
+import FacilitiesPage from './pages/FacilitiesPage'
+import GalleryPage from './pages/GalleryPage'
+import ContactPage from './pages/ContactPage'
+
 import { useScrollAnimation } from './hooks/useScrollAnimation'
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
   const [showTop, setShowTop] = useState(false)
 
+  // Triggered on location changes automatically via inside useScrollAnimation
   useScrollAnimation()
 
   useEffect(() => {
@@ -44,20 +46,25 @@ export default function App() {
   }
 
   return (
-    <div className="font-body bg-bg-light dark:bg-bg-dark text-text-main dark:text-slate-100 transition-colors duration-300">
-      <TopBar />
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
-      <Hero />
-      <Stats />
-      <About />
-      <Services />
-      <Emergency />
-      <WhyChooseUs />
-      <Facilities />
-      <Gallery />
-      <Testimonials />
-      <CTABanner />
-      <Contact />
+    <div className="font-body bg-bg-light dark:bg-bg-dark text-text-main dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col justify-between">
+      <ScrollToTop />
+      <div>
+        <TopBar />
+        <Navbar theme={theme} onToggleTheme={toggleTheme} />
+        
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/emergency" element={<EmergencyPage />} />
+            <Route path="/facilities" element={<FacilitiesPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+      </div>
+
       <Footer />
 
       {/* WhatsApp Float */}

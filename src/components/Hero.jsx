@@ -1,4 +1,5 @@
 import { CalendarCheck, PhoneCall, CheckCircle2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   return (
@@ -41,10 +42,10 @@ export default function Hero() {
           </div>
 
           <div className="hero-buttons-anim flex flex-wrap gap-4 mt-8">
-            <a href="#contact"
+            <Link to="/contact"
               className="btn-shimmer bg-white text-primary font-semibold px-8 py-4 rounded-2xl text-base hover:bg-blue-50 transition-colors inline-flex items-center gap-2 shadow-lg shadow-black/10">
               <CalendarCheck className="w-5 h-5" />Book Appointment
-            </a>
+            </Link>
             <a href="tel:+919717346793"
               className="pulse-emergency bg-emergency hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-2xl text-base transition-colors inline-flex items-center gap-2">
               <PhoneCall className="w-5 h-5" />Emergency Call

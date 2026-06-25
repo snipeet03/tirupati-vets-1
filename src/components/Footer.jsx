@@ -1,4 +1,5 @@
 import { HeartPulse, MapPin, Phone, Clock, Heart } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -23,8 +24,19 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-sm tracking-wider uppercase text-slate-300 mb-5">Quick Links</h4>
             <ul className="space-y-3">
-              {[['#home','Home'],['#about','About Us'],['#services','Services'],['#emergency','Emergency'],['#gallery','Gallery'],['#contact','Contact']].map(([href, label]) => (
-                <li key={href}><a href={href} className="text-slate-400 hover:text-white text-sm transition-colors">{label}</a></li>
+              {[
+                ['/', 'Home'],
+                ['/about', 'About Us'],
+                ['/services', 'Services'],
+                ['/emergency', 'Emergency'],
+                ['/gallery', 'Gallery'],
+                ['/contact', 'Contact']
+              ].map(([to, label]) => (
+                <li key={to}>
+                  <Link to={to} className="text-slate-400 hover:text-white text-sm transition-colors">
+                    {label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -32,8 +44,12 @@ export default function Footer() {
           <div>
             <h4 className="font-heading font-semibold text-sm tracking-wider uppercase text-slate-300 mb-5">Services</h4>
             <ul className="space-y-3">
-              {['Vaccination','Emergency Care','Pet Surgery','Diagnostics','Dental Care','Health Checkups'].map((s) => (
-                <li key={s}><a href="#services" className="text-slate-400 hover:text-white text-sm transition-colors">{s}</a></li>
+              {['Vaccination', 'Emergency Care', 'Pet Surgery', 'Diagnostics', 'Dental Care', 'Health Checkups'].map((s) => (
+                <li key={s}>
+                  <Link to="/services" className="text-slate-400 hover:text-white text-sm transition-colors">
+                    {s}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
