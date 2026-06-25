@@ -73,3 +73,36 @@ body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
 html.theme-transition, html.theme-transition *, html.theme-transition *::before, html.theme-transition *::after {
   transition: background-color 0.4s, color 0.3s, border-color 0.3s, box-shadow 0.3s !important;
 }
+
+/* Background grid pattern */
+.bg-grid-pattern {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Card glass glow hover */
+.glow-hover {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.glow-hover::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(30,136,229,0.3), rgba(76,175,80,0.3));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glow-hover:hover::before {
+  opacity: 1;
+}
+

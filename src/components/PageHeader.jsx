@@ -6,6 +6,7 @@ export default function PageHeader({ title, subtitle }) {
     <div className="relative bg-slate-900 dark:bg-black py-16 md:py-24 overflow-hidden border-b border-white/10">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-purple-900/50 dark:from-primary/90 dark:via-slate-900/90 dark:to-purple-950/60" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-35" />
       </div>
       
       <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />

@@ -1,5 +1,7 @@
 import { Phone, MapPin, Clock, MessageCircle, Calendar } from 'lucide-react'
 
+import { Link } from 'react-router-dom'
+
 export default function TopBar() {
   return (
     <div className="bg-primary dark:bg-slate-900 text-white text-sm py-2 px-4 relative z-50">
@@ -25,10 +27,10 @@ export default function TopBar() {
             className="flex items-center gap-1.5 bg-green-600 hover:bg-green-700 px-3 py-1 rounded-full text-xs font-medium transition-colors">
             <MessageCircle className="w-3.5 h-3.5" />WhatsApp
           </a>
-          <a href="#contact"
+          <Link to="/contact"
             className="hidden sm:flex items-center gap-1.5 bg-white/15 hover:bg-white/25 px-3 py-1 rounded-full text-xs font-medium transition-colors">
             <Calendar className="w-3.5 h-3.5" />Book Appointment
-          </a>
+          </Link>
         </div>
       </div>
     </div>
