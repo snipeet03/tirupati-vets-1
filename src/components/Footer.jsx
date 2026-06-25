@@ -76,7 +76,15 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">Copyright © 2025 Tirupati Vets. All rights reserved.</p>
           <p className="text-slate-600 text-xs flex items-center gap-1">
-            Designed with <Heart className="w-3 h-3 text-emergency" /> for pets and their families
+            Designed & Developed by{" "}
+            <a
+              href="https://kkaptureflowmedia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-blue-500 hover:text-blue-400 hover:underline transition-all"
+            >
+              KKaptureFlow Media
+            </a>
           </p>
         </div>
       </div>
